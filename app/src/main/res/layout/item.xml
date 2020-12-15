@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app = "http://schemas.android.com/apk/res-auto"
+    app:cardElevation="8dp"
+    android:layout_margin="13dp"
+    >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="First Name"
+            android:textSize="18sp"
+            android:textColor="#000"
+            android:padding="8dp"
+            android:id="@+id/firstName" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Last Name"
+            android:textSize="18sp"
+            android:textColor="#000"
+            android:padding="8dp"
+            android:id="@+id/LastName" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Address"
+            android:textSize="18sp"
+            android:textColor="#000"
+            android:padding="8dp"
+            android:id="@+id/address" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Email"
+            android:textSize="18sp"
+            android:textColor="#000"
+            android:padding="8dp"
+            android:id="@+id/email" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Mobile One"
+            android:textSize="18sp"
+            android:textColor="#000"
+            android:padding="8dp"
+            android:id="@+id/mobile_one" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Mobile Two"
+            android:textSize="18sp"
+            android:textColor="#000"
+            android:padding="8dp"
+            android:id="@+id/mobile_two" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Mobile Three"
+            android:textSize="18sp"
+            android:textColor="#000"
+            android:padding="8dp"
+            android:id="@+id/mobile_three" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="DOB"
+            android:textSize="18sp"
+            android:textColor="#000"
+            android:padding="8dp"
+            android:id="@+id/dob" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Anniversary"
+            android:textSize="18sp"
+            android:textColor="#000"
+            android:padding="8dp"
+            android:id="@+id/anniversary" />
+
+    </LinearLayout>
+
+</androidx.cardview.widget.CardView>
