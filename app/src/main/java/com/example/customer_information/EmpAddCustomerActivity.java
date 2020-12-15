@@ -25,7 +25,7 @@ import java.util.Calendar;
 import java.util.HashMap;
 import java.util.UUID;
 
-public class AddCustomerActivity extends AppCompatActivity {
+public class EmpAddCustomerActivity extends AppCompatActivity {
 
     private EditText mFirstName, mLastName, mAddress, mEmail, mMobileOne, mMobileTwo, mMobileThree, mDOB, mAnniversary;
     private Button addNewBtn, newRecBtn;
@@ -50,7 +50,7 @@ public class AddCustomerActivity extends AppCompatActivity {
         mDOB = findViewById(R.id.etDOB);
         mAnniversary = findViewById(R.id.etAnniversary);
 
-        loader = new Dialog(AddCustomerActivity.this);
+        loader = new Dialog(EmpAddCustomerActivity.this);
         loader.setContentView(R.layout.progress_bar);
         loader.setCancelable(false);
 
@@ -62,7 +62,7 @@ public class AddCustomerActivity extends AppCompatActivity {
                 int month = cldr.get(Calendar.MONTH);
                 int year = cldr.get(Calendar.YEAR);
                 // date picker dialog
-                picker = new DatePickerDialog(AddCustomerActivity.this,
+                picker = new DatePickerDialog(EmpAddCustomerActivity.this,
                         new DatePickerDialog.OnDateSetListener() {
                             @Override
                             public void onDateSet(DatePicker view, int year, int monthOfYear, int dayOfMonth) {
@@ -81,7 +81,7 @@ public class AddCustomerActivity extends AppCompatActivity {
                 int month = cldr.get(Calendar.MONTH);
                 int year = cldr.get(Calendar.YEAR);
                 // date picker dialog
-                picker = new DatePickerDialog(AddCustomerActivity.this,
+                picker = new DatePickerDialog(EmpAddCustomerActivity.this,
                         new DatePickerDialog.OnDateSetListener() {
                             @Override
                             public void onDateSet(DatePicker view, int year, int monthOfYear, int dayOfMonth) {
@@ -142,8 +142,8 @@ public class AddCustomerActivity extends AppCompatActivity {
 
                 Bundle bundle1 = getIntent().getExtras();
                 if(bundle1 != null){
-                            String id = uId;
-                            updateToFireStore(id, firstName, lastName, postalAddress, email, mobileOne, mobileTwo, mobileThree, dob, anniversary);
+                    String id = uId;
+                    updateToFireStore(id, firstName, lastName, postalAddress, email, mobileOne, mobileTwo, mobileThree, dob, anniversary);
                 }else{
                     String id = UUID.randomUUID().toString();
                     saveToFireStore(id, firstName, lastName, postalAddress, email, mobileOne, mobileTwo, mobileThree, dob, anniversary);
@@ -155,14 +155,14 @@ public class AddCustomerActivity extends AppCompatActivity {
         newRecBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(AddCustomerActivity.this, AddCustomerActivity.class));
+                startActivity(new Intent(EmpAddCustomerActivity.this, EmpAddCustomerActivity.class));
                 finish();
             }
         });
     }
 
     private void updateToFireStore(String id, String firstName, String lastName, String postalAddress, String email, String mobileOne,
-                                    String mobileTwo, String mobileThree, String dob, String anniversary){
+                                   String mobileTwo, String mobileThree, String dob, String anniversary){
 
         loader.show();
         db.collection("Documents").document(id).update("firstName", firstName, "lastName", lastName,
@@ -172,17 +172,17 @@ public class AddCustomerActivity extends AppCompatActivity {
                     @Override
                     public void onComplete(@NonNull Task<Void> task) {
                         if(task.isSuccessful()){
-                            Toast.makeText(AddCustomerActivity.this, "Data Updated Successfully", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(EmpAddCustomerActivity.this, "Data Updated Successfully", Toast.LENGTH_SHORT).show();
                             loader.dismiss();
                         }else{
-                            Toast.makeText(AddCustomerActivity.this, "Data Not Updated" +task.getException().getMessage(), Toast.LENGTH_SHORT).show();
+                            Toast.makeText(EmpAddCustomerActivity.this, "Data Not Updated" +task.getException().getMessage(), Toast.LENGTH_SHORT).show();
                             loader.dismiss();
                         }
                     }
                 }).addOnFailureListener(new OnFailureListener() {
             @Override
             public void onFailure(@NonNull Exception e) {
-                Toast.makeText(AddCustomerActivity.this, e.getMessage(),  Toast.LENGTH_SHORT).show();
+                Toast.makeText(EmpAddCustomerActivity.this, e.getMessage(),  Toast.LENGTH_SHORT).show();
                 loader.dismiss();
             }
         });
@@ -211,14 +211,14 @@ public class AddCustomerActivity extends AppCompatActivity {
                         @Override
                         public void onComplete(@NonNull Task<Void> task) {
                             if(task.isSuccessful()){
-                                Toast.makeText(AddCustomerActivity.this, "Data Added Successfully", Toast.LENGTH_SHORT).show();
+                                Toast.makeText(EmpAddCustomerActivity.this, "Data Added Successfully", Toast.LENGTH_SHORT).show();
                                 loader.dismiss();
                             }
                         }
                     }).addOnFailureListener(new OnFailureListener() {
                 @Override
                 public void onFailure(@NonNull Exception e) {
-                    Toast.makeText(AddCustomerActivity.this, "Data Not Added", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(EmpAddCustomerActivity.this, "Data Not Added", Toast.LENGTH_SHORT).show();
                     loader.dismiss();
                 }
             });
@@ -232,7 +232,7 @@ public class AddCustomerActivity extends AppCompatActivity {
     @Override
     public void onBackPressed() {
         super.onBackPressed();
-        startActivity(new Intent(AddCustomerActivity.this, MainMenuActivity.class));
+        startActivity(new Intent(EmpAddCustomerActivity.this, EmpMainMenu.class));
     }
 
 }

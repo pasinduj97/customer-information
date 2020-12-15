@@ -9,12 +9,12 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import it.xabaras.android.recyclerview.swipedecorator.RecyclerViewSwipeDecorator;
 
-public class TouchHelper extends ItemTouchHelper.SimpleCallback {
+public class EmpTouchHelper extends ItemTouchHelper.SimpleCallback {
 
-    private MyAdapter adapter;
+    private EmpMyAdapter adapter;
 
-    public TouchHelper(MyAdapter adapter) {
-        super(0, ItemTouchHelper.LEFT | ItemTouchHelper.RIGHT);
+    public EmpTouchHelper(EmpMyAdapter adapter) {
+        super(0, ItemTouchHelper.LEFT );
         this.adapter = adapter;
 
     }
@@ -30,8 +30,6 @@ public class TouchHelper extends ItemTouchHelper.SimpleCallback {
         if(direction == ItemTouchHelper.LEFT){
             adapter.updateData(position);
             adapter.notifyDataSetChanged();
-        }else{
-            adapter.deleteData(position);
         }
     }
 
@@ -39,8 +37,6 @@ public class TouchHelper extends ItemTouchHelper.SimpleCallback {
     public void onChildDraw(@NonNull Canvas c, @NonNull RecyclerView recyclerView, @NonNull RecyclerView.ViewHolder viewHolder, float dX, float dY, int actionState, boolean isCurrentlyActive) {
 
         new RecyclerViewSwipeDecorator.Builder(c, recyclerView, viewHolder, dX, dY, actionState, isCurrentlyActive)
-                .addSwipeRightBackgroundColor(Color.parseColor("#8E000C"))
-                .addSwipeRightActionIcon(R.drawable.ic_baseline_delete_sweep_24)
                 .addSwipeLeftBackgroundColor(Color.parseColor("#028055"))
                 .addSwipeLeftActionIcon(R.drawable.ic_baseline_edit_24)
                 .create()

@@ -19,33 +19,32 @@ import com.google.firebase.firestore.QuerySnapshot;
 import java.util.ArrayList;
 import java.util.List;
 
-public class AllCustomersActivity extends AppCompatActivity {
+public class EmpAllCustomers extends AppCompatActivity {
 
     private RecyclerView mrecycleView;
 
     private FirebaseFirestore db;
 
-    private MyAdapter adapter;
+    private EmpMyAdapter adapter;
     private List<Model> list;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_all_customers);
+        setContentView(R.layout.activity_emp_all_customers);
 
-        mrecycleView = findViewById(R.id.recyclerView);
+        mrecycleView = findViewById(R.id.EmprecyclerView);
         mrecycleView.setHasFixedSize(true);
         mrecycleView.setLayoutManager(new LinearLayoutManager(this));
 
         db = FirebaseFirestore.getInstance();
 
         list = new ArrayList<>();
-        adapter = new MyAdapter(this, list,AllCustomersActivity.this);
+        adapter = new EmpMyAdapter(EmpAllCustomers.this, list);
 
         mrecycleView.setAdapter(adapter);
 
-        ItemTouchHelper touchHelper = new ItemTouchHelper(new TouchHelper(adapter));
+        ItemTouchHelper touchHelper = new ItemTouchHelper(new EmpTouchHelper(adapter));
         touchHelper.attachToRecyclerView(mrecycleView);
 
         showData();
@@ -72,9 +71,8 @@ public class AllCustomersActivity extends AppCompatActivity {
                 }).addOnFailureListener(new OnFailureListener() {
             @Override
             public void onFailure(@NonNull Exception e) {
-                Toast.makeText(AllCustomersActivity.this, "Data Not Loaded to the Application", Toast.LENGTH_SHORT).show();
+                Toast.makeText(EmpAllCustomers.this, "Data Not Loaded to the Application", Toast.LENGTH_SHORT).show();
             }
         });
     }
 }
-

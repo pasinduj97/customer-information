@@ -1,7 +1,11 @@
 package com.example.customer_information;
 
-import android.app.Dialog;
-import android.content.Context;
+import androidx.appcompat.app.AppCompatActivity;
+
+import android.os.Bundle;
+
+
+
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -20,23 +24,16 @@ import com.google.firebase.firestore.FirebaseFirestore;
 
 import java.util.List;
 
-public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
+public class EmpMyAdapter extends RecyclerView.Adapter<EmpMyAdapter.MyViewHolder> {
 
-    private AllCustomersActivity activity;
+    private EmpAllCustomers activity;
     private List<Model> mList;
     private FirebaseFirestore db = FirebaseFirestore.getInstance();
-    private Dialog loader;
-    private Context context;
 
 
-    public MyAdapter(AllCustomersActivity activity, List<Model> mList, Context context){
+    public EmpMyAdapter(EmpAllCustomers activity, List<Model> mList){
         this.activity = activity;
         this.mList = mList;
-        this.context = context;
-        loader = new Dialog(context);
-        loader.setContentView(R.layout.progress_bar);
-        loader.setCancelable(false);
-
     }
 
     public void updateData(int position){
@@ -54,38 +51,14 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
         bundle.putString("uDOB", item.getDob());
         bundle.putString("uAnniversary", item.getAnniversary());
 
-        Intent intent = new Intent(activity, AddCustomerActivity.class);
+        Intent intent = new Intent(activity, EmpAddCustomerActivity.class);
         intent.putExtras(bundle);
         activity.startActivity(intent);
     }
 
-    public void deleteData(final int position){
-        Model item = mList.get(position);
 
-        loader.show();
-        db.collection("Documents").document(item.getId()).delete()
-                .addOnCompleteListener(new OnCompleteListener<Void>() {
-                    @Override
-                    public void onComplete(@NonNull Task<Void> task) {
-                        if(task.isSuccessful()){
-                            notifyRemoved(position);
-                            Toast.makeText(activity, "Record Deleted Successfully", Toast.LENGTH_SHORT).show();
 
-                            loader.dismiss();
-                        }else{
-                            Toast.makeText(activity, "Data Not Deleted" + task.getException().getMessage(), Toast.LENGTH_SHORT).show();
 
-                            loader.dismiss();
-                        }
-                    }
-                });
-    }
-
-    private void notifyRemoved(int position){
-        mList.remove(position);
-        notifyRemoved(position);
-        activity.showData();
-    }
 
 
     @NonNull

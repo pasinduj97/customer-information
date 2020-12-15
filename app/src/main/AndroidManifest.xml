@@ -9,7 +9,14 @@
         android:roundIcon="@drawable/informationbutton"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".AllCustomersActivity"></activity>
+        <activity android:name=".EmpAddCustomerActivity"></activity>
+        <activity android:name=".EmpTouchHelper" />
+        <activity android:name=".EmpMyAdapter" />
+        <activity android:name=".EmpAllCustomers" />
+        <activity android:name=".EmpMainMenu" />
+        <activity android:name=".EmpLogin" />
+        <activity android:name=".ViewCustomer" />
+        <activity android:name=".AllCustomersActivity" />
         <activity android:name=".AddCustomerActivity" />
         <activity android:name=".MainMenuActivity" />
         <activity android:name=".LoginActivity" />

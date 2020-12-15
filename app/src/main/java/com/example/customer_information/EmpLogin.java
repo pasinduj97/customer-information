@@ -14,47 +14,42 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
-import com.google.android.gms.tasks.OnFailureListener;
-import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
-import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.QuerySnapshot;
 
-public class LoginActivity extends AppCompatActivity {
+public class EmpLogin extends AppCompatActivity {
 
     private EditText mEmail, mPass;
     private TextView mTextView;
     private Button signInBtn;
     private Dialog loader;
-    private FirebaseAuth mAuth;
     private FirebaseFirestore db;
     private  Integer x,y;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_login);
+        setContentView(R.layout.activity_emp_login);
 
         mEmail = findViewById(R.id.loginEmail);
         mPass = findViewById(R.id.loginPassword);
         mTextView = findViewById(R.id.textView2);
         signInBtn = findViewById(R.id.loginButton);
 
-        mAuth = FirebaseAuth.getInstance();
+
         db = FirebaseFirestore.getInstance();
 
-        loader = new Dialog(LoginActivity.this);
+        loader = new Dialog(EmpLogin.this);
         loader.setContentView(R.layout.progress_bar);
         loader.setCancelable(false);
 
         mTextView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(LoginActivity.this, EmpLogin.class));
+                startActivity(new Intent(EmpLogin.this, MainActivity.class));
             }
         });
 
@@ -74,26 +69,47 @@ public class LoginActivity extends AppCompatActivity {
 
         if(!email.isEmpty() && Patterns.EMAIL_ADDRESS.matcher(email).matches()){
             if(!password.isEmpty()){
-                mAuth.signInWithEmailAndPassword(email, password)
-                        .addOnSuccessListener(new OnSuccessListener<AuthResult>() {
-                            @Override
-                            public void onSuccess(AuthResult authResult) {
+
+                db.collection("User").get().addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
+                    @Override
+                    public void onComplete(@NonNull Task<QuerySnapshot> task) {
+                        for (DocumentSnapshot documentSnapshot : task.getResult()){
+
+                            if(email.equals(documentSnapshot.getString("Email"))){
+                                x = 1;
+                            }else{
+                                x = 0;
+                            }
+
+                            if(password.equals( documentSnapshot.getString("Password"))){
+                                y = 1;
+                            }else{
+                                y = 0;
+                            }
+
+                            if(x == 1 && y == 1){
 
                                 loader.dismiss();
-                                Toast.makeText(LoginActivity.this, "Login Success", Toast.LENGTH_SHORT).show();
-                                startActivity(new Intent(LoginActivity.this, MainMenuActivity.class));
+                                Toast.makeText(EmpLogin.this, "Login Success", Toast.LENGTH_SHORT).show();
+                                startActivity(new Intent(EmpLogin.this, EmpMainMenu.class));
                                 finish();
-                            }
-                        }).addOnFailureListener(new OnFailureListener() {
-                    @Override
-                    public void onFailure(@NonNull Exception e) {
 
-                        loader.dismiss();
-                        Toast.makeText(LoginActivity.this, "Login Failed", Toast.LENGTH_SHORT).show();
+                                x = 0;
+                                y = 0;
+
+                                break;
+
+                            }else {
+
+                                loader.dismiss();
+                                Toast.makeText(EmpLogin.this, "Login Failed", Toast.LENGTH_SHORT).show();
+                                x = 0;
+                                y = 0;
+                            }
+
+                        }
                     }
                 });
-
-
 
             }else{
                 mPass.setError("Password Cannot be Null");

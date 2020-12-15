@@ -1,99 +1,58 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.cardview.widget.CardView
     xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
+    android:layout_height="76dp"
     xmlns:app = "http://schemas.android.com/apk/res-auto"
     app:cardElevation="8dp"
     android:layout_margin="13dp"
+    android:id="@+id/cardview"
+    app:cardBackgroundColor="@color/item"
+    app:cardCornerRadius="18dp"
     >
 
-    <LinearLayout
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
         android:orientation="vertical">
 
         <TextView
-            android:layout_width="match_parent"
+            android:id="@+id/firstName"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:fontFamily="@font/robotobold"
             android:text="First Name"
+            android:layout_marginStart="90dp"
+            android:textColor="#FFFF"
             android:textSize="18sp"
-            android:textColor="#000"
-            android:padding="8dp"
-            android:id="@+id/firstName" />
+          />
+
+        <ImageView
+
+            android:layout_marginTop="10dp"
+            android:id="@+id/imageView3"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_marginStart="10dp"
+
+            app:srcCompat="@drawable/user" />
 
         <TextView
-            android:layout_width="match_parent"
+            android:id="@+id/textView"
+            android:layout_width="wrap_content"
+            android:layout_marginTop="40dp"
             android:layout_height="wrap_content"
-            android:text="Last Name"
-            android:textSize="18sp"
-            android:textColor="#000"
-            android:padding="8dp"
-            android:id="@+id/LastName" />
+            android:layout_marginStart="90dp"
+            android:fontFamily="@font/robotoregular"
+            android:text="0774081614"
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Address"
-            android:textSize="18sp"
-            android:textColor="#000"
-            android:padding="8dp"
-            android:id="@+id/address" />
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Email"
-            android:textSize="18sp"
-            android:textColor="#000"
-            android:padding="8dp"
-            android:id="@+id/email" />
+            android:textColor="#FFFF"
+             />
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Mobile One"
-            android:textSize="18sp"
-            android:textColor="#000"
-            android:padding="8dp"
-            android:id="@+id/mobile_one" />
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Mobile Two"
-            android:textSize="18sp"
-            android:textColor="#000"
-            android:padding="8dp"
-            android:id="@+id/mobile_two" />
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Mobile Three"
-            android:textSize="18sp"
-            android:textColor="#000"
-            android:padding="8dp"
-            android:id="@+id/mobile_three" />
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="DOB"
-            android:textSize="18sp"
-            android:textColor="#000"
-            android:padding="8dp"
-            android:id="@+id/dob" />
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Anniversary"
-            android:textSize="18sp"
-            android:textColor="#000"
-            android:padding="8dp"
-            android:id="@+id/anniversary" />
-
-    </LinearLayout>
+    </RelativeLayout>
 
 </androidx.cardview.widget.CardView>

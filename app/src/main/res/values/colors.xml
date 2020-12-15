@@ -1,6 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#180B2B</color>
-    <color name="colorPrimaryDark">#F0F4C3</color>
+    <color name="colorPrimary">#82CEF4</color>
+    <color name="colorPrimaryDark">#82CEF4</color>
     <color name="colorAccent">#03DAC5</color>
+    <color name="background">#D8F2FF</color>
+    <color name="item">#82CEF4</color>
+    <color name="button">#2AA8F2</color>
+    <color name="swiper">#028055</color>
+    <color name="swipel">#8E000C</color>
 </resources>
