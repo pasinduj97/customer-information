@@ -59,9 +59,9 @@ public class AllCustomersActivity extends AppCompatActivity {
                         list.clear();
                         for(DocumentSnapshot snapshot : task.getResult()){
                             Model model = new Model(snapshot.getString("id"), snapshot.getString("firstName"),
-                                    snapshot.getString("lastName"), snapshot.getString("postalAddress"), snapshot.getString("email"),
+                                    snapshot.getString("lastName"), snapshot.getString("doorNo"),snapshot.getString("addressLine1"),snapshot.getString("addressLine2"), snapshot.getString("email"),
                                     snapshot.getString("mobileOne"), snapshot.getString("mobileTwo"), snapshot.getString("mobileThree"),
-                                    snapshot.getString("dob"), snapshot.getString("anniversary"));
+                                    snapshot.getString("dob"), snapshot.getString("anniversary"),snapshot.getString("type"),snapshot.getString("initials"),snapshot.getString("country"),snapshot.getString("postalCode"));
 
                             list.add(model);
 

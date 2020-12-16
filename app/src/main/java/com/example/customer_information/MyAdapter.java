@@ -46,13 +46,19 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
         bundle.putString("uId", item.getId());
         bundle.putString("uFirstName", item.getFirstName());
         bundle.putString("uLastName", item.getLastName());
-        bundle.putString("uPostalAddress", item.getPostalAddres());
+        bundle.putString("uPostalAddressNo", item.getPostalAddresNo());
+        bundle.putString("uPostalAddress1", item.getPostalAddressl1());
+        bundle.putString("uPostalAddress2", item.getPostalAddresl2());
         bundle.putString("uEmail", item.getEmail());
         bundle.putString("uMobileOne", item.getMobileOne());
         bundle.putString("uMobileTwo", item.getMobileTwo());
         bundle.putString("uMobileThree", item.getMobileThree());
         bundle.putString("uDOB", item.getDob());
         bundle.putString("uAnniversary", item.getAnniversary());
+        bundle.putString("uInitials", item.getInitials());
+        bundle.putString("uCountry", item.getCountry());
+        bundle.putString("uPostalCode", item.getPostalC());
+        bundle.putString("uType", item.getType());
 
         Intent intent = new Intent(activity, AddCustomerActivity.class);
         intent.putExtras(bundle);
@@ -83,7 +89,6 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
 
     private void notifyRemoved(int position){
         mList.remove(position);
-        notifyRemoved(position);
         activity.showData();
     }
 
@@ -108,13 +113,19 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
                 Intent intent = new Intent(view.getContext(),ViewCustomer.class);
                 intent.putExtra("first",mList.get(position).getFirstName());
                 intent.putExtra("last",mList.get(position).getLastName());
-                intent.putExtra("address",mList.get(position).getPostalAddres());
+                intent.putExtra("addressNo",mList.get(position).getPostalAddresNo());
+                intent.putExtra("address1",mList.get(position).getPostalAddressl1());
+                intent.putExtra("address2",mList.get(position).getPostalAddresl2());
                 intent.putExtra("email",mList.get(position).getEmail());
                 intent.putExtra("mobile1",mList.get(position).getMobileOne());
                 intent.putExtra("mobile2",mList.get(position).getMobileTwo());
                 intent.putExtra("land",mList.get(position).getMobileThree());
                 intent.putExtra("dob",mList.get(position).getDob());
                 intent.putExtra("anniversary",mList.get(position).getAnniversary());
+                intent.putExtra("initials", mList.get(position).getInitials());
+                intent.putExtra("country", mList.get(position).getCountry());
+                intent.putExtra("postalCode", mList.get(position).getPostalC());
+                intent.putExtra("type", mList.get(position).getType());
                 view.getContext().startActivity(intent);
             }
         });

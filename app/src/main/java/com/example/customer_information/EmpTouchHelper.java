@@ -13,6 +13,8 @@ public class EmpTouchHelper extends ItemTouchHelper.SimpleCallback {
 
     private EmpMyAdapter adapter;
 
+
+
     public EmpTouchHelper(EmpMyAdapter adapter) {
         super(0, ItemTouchHelper.LEFT );
         this.adapter = adapter;

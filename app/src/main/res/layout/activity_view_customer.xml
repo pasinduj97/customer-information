@@ -1,4 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
+<ScrollView android:layout_width="match_parent" android:layout_height="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android" >
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -20,7 +22,7 @@
             app:cardBackgroundColor="@color/item"
             android:elevation="10dp"
 
-            android:layout_marginTop="310dp"
+            android:layout_marginTop="400dp"
             android:layout_marginStart="50dp"
             android:layout_marginEnd="50dp"
             >
@@ -53,7 +55,7 @@
             app:cardCornerRadius="15dp"
             app:cardBackgroundColor="@color/item"
             android:layout_marginStart="50dp"
-            android:layout_marginTop="430dp"
+            android:layout_marginTop="520dp"
             android:layout_marginEnd="50dp"
 
             >
@@ -82,14 +84,14 @@
         <RelativeLayout
 
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="730dp">
 
             <androidx.cardview.widget.CardView
                 android:id="@+id/opt4"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
                 android:layout_marginStart="50dp"
-                android:layout_marginTop="490dp"
+                android:layout_marginTop="580dp"
                 android:layout_marginEnd="50dp"
                 app:cardBackgroundColor="@color/item"
                 app:cardCornerRadius="15dp"
@@ -121,7 +123,7 @@
 
             <androidx.cardview.widget.CardView
                 android:layout_width="380dp"
-                android:layout_height="260dp"
+                android:layout_height="350dp"
                 app:cardCornerRadius="15dp"
                 android:layout_alignParentTop="true"
                 android:layout_alignParentEnd="true"
@@ -133,7 +135,7 @@
                 <RelativeLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginBottom="20dp"
+
                     android:padding="10dp">
 
                     <TextView
@@ -141,16 +143,51 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
 
+                        android:layout_marginStart="70dp"
+
+                        android:textSize="25dp"
+                        android:fontFamily="@font/breeserifregular"
+                        android:text="Name ediriwickramasooriya " />
+
+                    <TextView
+                        android:id="@+id/typev"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+
                         android:layout_marginStart="18dp"
 
                         android:textSize="25dp"
                         android:fontFamily="@font/breeserifregular"
-                        android:text="Name" />
+                        android:text="Mrs." />
+
+                    <TextView
+                        android:id="@+id/name2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+
+                        android:layout_marginTop="110dp"
+                        android:layout_marginStart="70dp"
+
+                        android:textSize="20dp"
+                        android:fontFamily="@font/breeserifregular"
+                        android:text="Name ediriwickramasooriya " />
+
+                    <TextView
+                        android:id="@+id/type2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="110dp"
+                        android:layout_marginStart="18dp"
+
+                        android:textSize="20dp"
+                        android:fontFamily="@font/breeserifregular"
+                        android:text="Mrs." />
+
 
                     <ImageView
                         android:layout_width="30dp"
                         android:layout_height="30dp"
-                        android:layout_marginTop="90dp"
+                        android:layout_marginTop="160dp"
                         android:layout_marginStart="18dp"
 
                         app:srcCompat="@drawable/location"
@@ -159,9 +196,9 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="91dp"
+                        android:layout_marginTop="161dp"
                         android:layout_marginStart="50dp"
-                        android:id="@+id/address"
+                        android:id="@+id/address1"
                         android:fontFamily="@font/robotobold"
                         android:textSize="20dp"
                         android:paddingLeft="10dp"
@@ -172,7 +209,47 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="193dp"
+                        android:layout_marginTop="190dp"
+                        android:layout_marginStart="50dp"
+                        android:id="@+id/address2"
+                        android:fontFamily="@font/robotobold"
+                        android:textSize="20dp"
+                        android:paddingLeft="10dp"
+                        android:text="address"
+
+                        ></TextView>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="217dp"
+                        android:layout_marginStart="50dp"
+                        android:id="@+id/address3"
+                        android:fontFamily="@font/robotobold"
+                        android:textSize="20dp"
+                        android:paddingLeft="10dp"
+                        android:text="address"
+
+                        ></TextView>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="244dp"
+                        android:layout_marginStart="50dp"
+                        android:id="@+id/countryv"
+                        android:fontFamily="@font/robotobold"
+                        android:textSize="20dp"
+                        android:paddingLeft="10dp"
+                        android:text="Sri lanka"
+
+                        ></TextView>
+
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="293dp"
                         android:layout_marginStart="50dp"
                         android:paddingLeft="10dp"
                         android:id="@+id/dob"
@@ -185,7 +262,7 @@
                     <ImageView
                         android:layout_width="30dp"
                         android:layout_height="30dp"
-                        android:layout_marginTop="190dp"
+                        android:layout_marginTop="290dp"
                         android:layout_marginStart="18dp"
                         app:srcCompat="@drawable/cake"
                         ></ImageView>
@@ -193,7 +270,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="193dp"
+                        android:layout_marginTop="293dp"
                         android:layout_marginStart="240dp"
                         android:paddingLeft="10dp"
                         android:id="@+id/ani"
@@ -206,10 +283,32 @@
                     <ImageView
                         android:layout_width="30dp"
                         android:layout_height="30dp"
-                        android:layout_marginTop="190dp"
+                        android:layout_marginTop="290dp"
                         android:layout_marginStart="205dp"
                         app:srcCompat="@drawable/calendar"
                         ></ImageView>
+
+                    <ImageView
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:layout_marginTop="160dp"
+                        android:layout_marginStart="205dp"
+                        app:srcCompat="@drawable/letter"
+                        ></ImageView>
+
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="161dp"
+                        android:layout_marginStart="240dp"
+                        android:paddingLeft="10dp"
+                        android:id="@+id/postalv"
+                        android:textSize="20dp"
+                        android:fontFamily="@font/robotobold"
+                        android:text="11358"
+
+                        ></TextView>
 
 
 
@@ -232,7 +331,7 @@
             app:cardCornerRadius="15dp"
             android:id="@+id/opt2"
             app:cardBackgroundColor="@color/item"
-            android:layout_marginTop="370dp"
+            android:layout_marginTop="460dp"
             android:layout_marginStart="50dp"
             android:layout_marginEnd="50dp"
             >
@@ -264,4 +363,4 @@
 
 
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.constraintlayout.widget.ConstraintLayout></ScrollView>

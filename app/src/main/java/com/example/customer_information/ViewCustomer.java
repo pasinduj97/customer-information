@@ -11,7 +11,7 @@ import android.widget.TextView;
 
 public class ViewCustomer extends AppCompatActivity {
 
-    TextView name,address,dob,aniversry,email,land,mob1,mob2;
+    TextView name,address,dob,aniversry,email,land,mob1,mob2,typev,postalv,ad1v,ad2v,ad3v,cuntv,name2,type2;
     String mobile1,mobile2,landline,mail;
     CardView opt1, opt2, optlan, opt4;
 
@@ -24,18 +24,25 @@ public class ViewCustomer extends AppCompatActivity {
         setContentView(R.layout.activity_view_customer);
 
         name = findViewById(R.id.name);
-        address = findViewById(R.id.address);
+        ad1v = findViewById(R.id.address1);
+        ad2v = findViewById(R.id.address2);
+        ad3v = findViewById(R.id.address3);
         dob = findViewById(R.id.dob);
         aniversry = findViewById(R.id.ani);
         email = findViewById(R.id.email);
         land = findViewById(R.id.landline);
         mob1 = findViewById(R.id.mobile1);
         mob2 = findViewById(R.id.mobile2);
-
+        cuntv = findViewById(R.id.countryv);
         opt1 = findViewById(R.id.opt1);
         optlan = findViewById(R.id.opt3);
         opt2 = findViewById(R.id.opt2);
         opt4 = findViewById(R.id.opt4);
+        name2 = findViewById(R.id.name2);
+        typev = findViewById(R.id.typev);
+        postalv = findViewById(R.id.postalv);
+        type2 = findViewById(R.id.type2);
+
 
 
         Intent intent = getIntent();
@@ -46,13 +53,20 @@ public class ViewCustomer extends AppCompatActivity {
         mail     = intent.getExtras().get("email").toString();
 
         name.setText(intent.getExtras().get("first").toString() + " " + intent.getExtras().get("last").toString());
-        address.setText(intent.getExtras().get("address").toString());
+        ad1v.setText(intent.getExtras().get("addressNo").toString());
+        ad2v.setText(intent.getExtras().get("address1").toString());
+        ad3v.setText(intent.getExtras().get("address2").toString());
+        cuntv.setText(intent.getExtras().get("country").toString());
         dob.setText(intent.getExtras().get("dob").toString());
         aniversry.setText(intent.getExtras().get("anniversary").toString());
         email.setText(intent.getExtras().get("email").toString());
         mob1.setText(intent.getExtras().get("mobile1").toString());
         mob2.setText(intent.getExtras().get("mobile2").toString());
         land.setText(intent.getExtras().get("land").toString());
+        name2.setText(intent.getExtras().get("initials").toString()+" "+ intent.getExtras().get("last"));
+        typev.setText(intent.getExtras().get("type").toString());
+        type2.setText(intent.getExtras().get("type").toString());
+        postalv.setText(intent.getExtras().get("postalCode").toString());
 
 
         call();

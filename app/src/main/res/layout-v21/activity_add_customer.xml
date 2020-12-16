@@ -1,0 +1,310 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_height="wrap_content"
+    android:layout_width="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    tools:context=".AddCustomerActivity">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/colorPrimaryDark"
+
+        android:backgroundTint="@color/background">
+
+
+        <EditText
+            android:id="@+id/etFirstName"
+            android:layout_width="400dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="110dp"
+            android:paddingStart="20dp"
+            android:layout_marginEnd="16dp"
+            android:ems="10"
+            android:hint="First Name"
+            android:background="@drawable/custom_input"
+            android:padding="10dp"
+            android:elevation="8dp"
+            android:inputType="textPersonName"
+            />
+
+        <RadioGroup xmlns:android="http://schemas.android.com/apk/res/android"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:paddingStart="50dp"
+            android:id="@+id/type"
+            android:orientation="horizontal">
+            <RadioButton android:id="@+id/mr"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Mr."
+                />
+            <RadioButton android:id="@+id/mrs"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Mrs."
+                />
+            <RadioButton android:id="@+id/ms"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Ms."
+             />
+            <RadioButton android:id="@+id/dr"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Dr."
+                />
+            <RadioButton android:id="@+id/rev"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Rev."
+                />
+        </RadioGroup>
+
+        <EditText
+            android:id="@+id/Initial"
+            android:layout_width="400dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="60dp"
+            android:paddingStart="20dp"
+            android:layout_marginEnd="16dp"
+            android:ems="10"
+            android:hint="Initials"
+            android:background="@drawable/custom_input"
+            android:padding="10dp"
+            android:elevation="8dp"
+            android:inputType="textPersonName"
+            />
+
+        <EditText
+            android:id="@+id/etLastName"
+            android:layout_width="400dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="160dp"
+            android:layout_marginEnd="16dp"
+            android:ems="10"
+            android:background="@drawable/custom_input"
+            android:padding="10dp"
+            android:elevation="8dp"
+            android:paddingStart="20dp"
+            android:hint="Last Name"
+            android:inputType="textPersonName"
+            />
+
+        <EditText
+            android:id="@+id/etAddressNo"
+            android:layout_width="400dp"
+            android:paddingStart="20dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="210dp"
+            android:layout_marginEnd="16dp"
+            android:ems="10"
+            android:background="@drawable/custom_input"
+            android:padding="10dp"
+            android:elevation="8dp"
+            android:hint="Door No"
+            android:inputType="textPostalAddress"
+            />
+
+        <EditText
+            android:id="@+id/etAddressLine2"
+            android:layout_width="400dp"
+            android:paddingStart="20dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="260dp"
+            android:layout_marginEnd="16dp"
+            android:ems="10"
+            android:background="@drawable/custom_input"
+            android:padding="10dp"
+            android:elevation="8dp"
+            android:hint="Address Line 1"
+            android:inputType="textPostalAddress"
+            />
+
+        <EditText
+            android:id="@+id/etAddressLine3"
+            android:layout_width="400dp"
+            android:paddingStart="20dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="310dp"
+            android:layout_marginEnd="16dp"
+            android:ems="10"
+            android:background="@drawable/custom_input"
+            android:padding="10dp"
+            android:elevation="8dp"
+            android:hint="Address Line 2"
+            android:inputType="textPostalAddress"
+            />
+
+        <EditText
+            android:id="@+id/postalcode"
+            android:layout_width="400dp"
+            android:paddingStart="20dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="360dp"
+            android:layout_marginEnd="16dp"
+            android:ems="10"
+            android:background="@drawable/custom_input"
+            android:padding="10dp"
+            android:elevation="8dp"
+            android:hint="Postal Code"
+            android:inputType="text"
+            />
+
+        <EditText
+            android:id="@+id/country"
+            android:layout_width="400dp"
+            android:paddingStart="20dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="410dp"
+            android:layout_marginEnd="16dp"
+            android:ems="10"
+            android:background="@drawable/custom_input"
+            android:padding="10dp"
+            android:elevation="8dp"
+            android:hint="Country"
+            android:inputType="text"
+            />
+
+
+        <EditText
+            android:id="@+id/etEmail"
+            android:layout_width="400dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="460dp"
+            android:layout_marginEnd="16dp"
+            android:ems="10"
+            android:paddingStart="20dp"
+            android:background="@drawable/custom_input"
+            android:padding="10dp"
+            android:elevation="8dp"
+            android:hint="Email"
+            android:inputType="textEmailAddress"
+            />
+
+        <EditText
+            android:id="@+id/etMobileOne"
+            android:layout_width="400dp"
+            android:layout_height="wrap_content"
+            android:paddingStart="20dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="510dp"
+            android:layout_marginEnd="16dp"
+            android:background="@drawable/custom_input"
+            android:padding="10dp"
+            android:elevation="8dp"
+            android:ems="10"
+            android:hint="Primary Mobile No"
+            android:inputType="phone"
+            />
+
+        <EditText
+            android:id="@+id/etMobileTwo"
+            android:layout_width="400dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="560dp"
+            android:layout_marginEnd="16dp"
+            android:paddingStart="20dp"
+            android:background="@drawable/custom_input"
+            android:padding="10dp"
+            android:elevation="8dp"
+            android:ems="10"
+            android:hint="Secondary Mobile No"
+            android:inputType="phone"
+            />
+
+        <EditText
+            android:id="@+id/etMobileThree"
+            android:paddingStart="20dp"
+            android:layout_width="400dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:background="@drawable/custom_input"
+            android:padding="10dp"
+            android:elevation="8dp"
+            android:layout_marginTop="610dp"
+            android:layout_marginEnd="16dp"
+            android:ems="10"
+            android:hint="Landline No"
+            android:inputType="phone"
+            />
+
+        <EditText
+            android:id="@+id/etDOB"
+            android:layout_width="158dp"
+
+            android:background="@drawable/custom_input"
+            android:padding="10dp"
+            android:paddingStart="20dp"
+            android:elevation="8dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="660dp"
+            android:layout_marginEnd="16dp"
+            android:ems="10"
+            android:hint="Date of Birth"
+            android:inputType="none"
+            />
+
+        <EditText
+            android:id="@+id/etAnniversary"
+            android:layout_width="158dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="660dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginStart="240dp"
+            android:background="@drawable/custom_input"
+            android:padding="10dp"
+
+            android:clickable="true"
+            android:elevation="8dp"
+            android:ems="10"
+            android:hint="Anniversary Date"
+            android:inputType="none"
+            />
+
+        <Button
+            android:id="@+id/buttonNewRecord"
+            android:layout_width="160dp"
+            android:layout_height="53dp"
+            android:layout_marginTop="720dp"
+            android:layout_marginEnd="24dp"
+            android:layout_marginStart="230dp"
+            android:layout_marginBottom="32dp"
+            android:background="@drawable/custom_button"
+            android:fontFamily="@font/breeserifregular"
+            android:text="New Record"
+            android:textColor="#FFFFFF"
+            android:textSize="20dp"
+            />
+
+        <Button
+            android:id="@+id/buttonAddRecord2"
+            android:layout_width="160dp"
+            android:layout_height="53dp"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="720dp"
+            android:layout_marginEnd="24dp"
+            android:layout_marginBottom="32dp"
+            android:background="@drawable/custom_button"
+            android:fontFamily="@font/breeserifregular"
+            android:text="Add Record"
+            android:textColor="#FFFFFF"
+            android:textSize="20dp"
+            />
+
+
+
+    </RelativeLayout></ScrollView>
